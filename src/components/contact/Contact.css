@@ -1,0 +1,17 @@
+.contact .container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; }
+  .contact .container .left-side .content-wrapper, .contact .container .right-side .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: start; }
+    .contact .container .left-side .content-wrapper .title, .contact .container .right-side .content-wrapper .title {
+      font-size: 3rem;
+      padding: 3rem;
+      margin: 2rem 0;
+      font-weight: 400; }
+    .contact .container .left-side .content-wrapper div, .contact .container .right-side .content-wrapper div {
+      padding: 0.5rem 2rem; }
+
+/*# sourceMappingURL=Contact.css.map */

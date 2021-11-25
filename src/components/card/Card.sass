@@ -1,0 +1,47 @@
+.card
+  background-color: transparent 
+  width: 40rem
+  margin: 3rem 0
+  z-index: 3
+  .card-header
+    border-top-left-radius: 2rem
+    border-top-right-radius: 2rem
+    height: 3rem
+    width: 100%
+    background-color: #999
+    display: flex
+    justify-content: start
+    align-items: center
+    padding-left: 2rem
+    .circle
+      display: inline
+      width: 1rem
+      height: 1rem
+      padding: .7rem
+      border-radius: 50%
+      background-color: red
+      margin: 0.3rem .2rem
+      &.circle-1
+        background-color: green 
+      &.circle-2
+        background-color: yellow
+  .card-img
+    height: 40rem
+    overflow: hidden
+    width: 100%   
+    z-index: 2   
+    img
+      width: 100%
+      object-fit: cover
+      transition: all 10s ease
+      z-index: 2
+    &:hover 
+      img
+        transform: translateY(-100%)
+        
+    
+    
+
+
+
+
