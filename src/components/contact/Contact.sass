@@ -1,17 +1,127 @@
 .contact
+  position: relative
+  .background
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    .circle-1
+      position: absolute
+      width: 30rem
+      height: 30rem
+      background-color: rgba(251, 168, 31, 1)
+      z-index: -1
+      border-radius: 50%
+      top: 0
+      left: -5%
+    .circle-2
+      position: absolute
+      width: 50rem
+      height: 50rem
+      background-color: rgba(251, 168, 31, 1)
+      z-index: -1
+      border-radius: 50%
+      bottom: -15%
+      right: -5%
   .container
     display: flex
     justify-content: space-evenly
     align-items: center
-    .left-side, .right-side
+    .left-side
       .content-wrapper
         display: flex
         flex-direction: column
         justify-content: start
         .title
-          font-size: 3rem
+          font-size: 4rem
           padding: 3rem
           margin: 2rem 0
           font-weight: 400
         div
           padding: .5rem 2rem
+          .text
+            font-weight: 400
+            font-size: 2rem
+            color: #444 
+            .icon
+              margin-top: 1rem
+              color: #ffae00
+              font-size: 2.6rem
+              margin-right: 1rem
+            span
+              padding-bottom: 1.3rem
+    .right-side
+      .content-wrapper
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: start
+        .opening-text
+          padding: 3rem
+          padding-bottom: 0
+          font-size: 2rem
+          font-weight: 600
+          color: #000 
+          span
+            color: #333
+            font-size: 1.8rem
+            font-weight: 400
+        form
+          display: flex
+          flex-direction: column
+          padding: 0 3rem 0 3rem
+          margin-top: 2rem
+          width: 100%
+          div
+            position: relative
+            z-index: 2
+            .input-tag
+              border: none
+              padding: 1rem 1rem
+              background-color: #eee
+              border-radius: .4rem
+              width: 100%
+              font-size: 2rem
+              margin-top: 2rem
+              &:focus
+                ~.labels
+                  transform: translateY(-2.8rem)
+                  font-size: 1rem
+                  color: #000
+
+
+            .labels
+              position: absolute
+              top: 3rem
+              left: 2rem
+              font-size: 2rem
+              transition: all .4s ease
+              color: darken(#eee, 10% )
+              z-index: 0
+            textarea
+              &.input-tag
+                max-height: 15rem
+                resize: none
+          .btn
+            background-color: #81f118 
+            border: none
+            border-radius: .3rem
+            padding: 1rem
+            font-size: 2rem
+            width: 15rem
+            margin-top: 1rem
+            cursor: pointer
+            margin-bottom: 2rem
+            z-index: 2
+            
+
+
+
+
+
+
+
+
+
+

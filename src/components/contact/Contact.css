@@ -1,17 +1,112 @@
-.contact .container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center; }
-  .contact .container .left-side .content-wrapper, .contact .container .right-side .content-wrapper {
+.contact {
+  position: relative; }
+  .contact .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+    .contact .background .circle-1 {
+      position: absolute;
+      width: 30rem;
+      height: 30rem;
+      background-color: #fba81f;
+      z-index: -1;
+      border-radius: 50%;
+      top: 0;
+      left: -5%; }
+    .contact .background .circle-2 {
+      position: absolute;
+      width: 50rem;
+      height: 50rem;
+      background-color: #fba81f;
+      z-index: -1;
+      border-radius: 50%;
+      bottom: -15%;
+      right: -5%; }
+  .contact .container {
     display: flex;
-    flex-direction: column;
-    justify-content: start; }
-    .contact .container .left-side .content-wrapper .title, .contact .container .right-side .content-wrapper .title {
-      font-size: 3rem;
-      padding: 3rem;
-      margin: 2rem 0;
-      font-weight: 400; }
-    .contact .container .left-side .content-wrapper div, .contact .container .right-side .content-wrapper div {
-      padding: 0.5rem 2rem; }
+    justify-content: space-evenly;
+    align-items: center; }
+    .contact .container .left-side .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: start; }
+      .contact .container .left-side .content-wrapper .title {
+        font-size: 4rem;
+        padding: 3rem;
+        margin: 2rem 0;
+        font-weight: 400; }
+      .contact .container .left-side .content-wrapper div {
+        padding: 0.5rem 2rem; }
+        .contact .container .left-side .content-wrapper div .text {
+          font-weight: 400;
+          font-size: 2rem;
+          color: #444; }
+          .contact .container .left-side .content-wrapper div .text .icon {
+            margin-top: 1rem;
+            color: #ffae00;
+            font-size: 2.6rem;
+            margin-right: 1rem; }
+          .contact .container .left-side .content-wrapper div .text span {
+            padding-bottom: 1.3rem; }
+    .contact .container .right-side .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start; }
+      .contact .container .right-side .content-wrapper .opening-text {
+        padding: 3rem;
+        padding-bottom: 0;
+        font-size: 2rem;
+        font-weight: 600;
+        color: #000; }
+        .contact .container .right-side .content-wrapper .opening-text span {
+          color: #333;
+          font-size: 1.8rem;
+          font-weight: 400; }
+      .contact .container .right-side .content-wrapper form {
+        display: flex;
+        flex-direction: column;
+        padding: 0 3rem 0 3rem;
+        margin-top: 2rem;
+        width: 100%; }
+        .contact .container .right-side .content-wrapper form div {
+          position: relative;
+          z-index: 2; }
+          .contact .container .right-side .content-wrapper form div .input-tag {
+            border: none;
+            padding: 1rem 1rem;
+            background-color: #eee;
+            border-radius: 0.4rem;
+            width: 100%;
+            font-size: 2rem;
+            margin-top: 2rem; }
+            .contact .container .right-side .content-wrapper form div .input-tag:focus ~ .labels {
+              transform: translateY(-2.8rem);
+              font-size: 1rem;
+              color: #000; }
+          .contact .container .right-side .content-wrapper form div .labels {
+            position: absolute;
+            top: 3rem;
+            left: 2rem;
+            font-size: 2rem;
+            transition: all 0.4s ease;
+            color: #d5d5d5;
+            z-index: 0; }
+          .contact .container .right-side .content-wrapper form div textarea.input-tag {
+            max-height: 15rem;
+            resize: none; }
+        .contact .container .right-side .content-wrapper form .btn {
+          background-color: #81f118;
+          border: none;
+          border-radius: 0.3rem;
+          padding: 1rem;
+          font-size: 2rem;
+          width: 15rem;
+          margin-top: 1rem;
+          cursor: pointer;
+          margin-bottom: 2rem;
+          z-index: 2; }
 
 /*# sourceMappingURL=Contact.css.map */

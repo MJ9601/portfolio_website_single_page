@@ -1,5 +1,4 @@
 import "./Card.css";
-import IMG from "./img.png";
 
 function Card(props) {
   return (
@@ -11,7 +10,7 @@ function Card(props) {
       </div>
       <a href={props.data.url} target="_blank" rel="noreferrer">
         <div className="card-img">
-          <img src={props.data.imgUrl} alt="" />
+          <img src={process.env.PUBLIC_URL + props.data.imgUrl} alt="" />
         </div>
       </a>
     </div>

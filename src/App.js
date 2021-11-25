@@ -3,6 +3,7 @@ import About from "./components/about/About";
 import Gallery from "./components/gallery/Gallery";
 import Contact from "./components/contact/Contact";
 import { useEffect, useState } from "react";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const [Data, setData] = useState([]);
@@ -27,6 +28,7 @@ function App() {
       <About />
       <Gallery data={Data} />
       <Contact />
+      <Footer />
     </div>
   );
 }

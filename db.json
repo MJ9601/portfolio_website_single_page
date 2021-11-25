@@ -2,38 +2,38 @@
   "items": [
     {
       "id": 1,
-      "imgUrl": "https://drive.google.com/file/d/14gMxKFwKOOnn_z12LUOWDwONiqQ0HGSx/view?usp=sharing",
-      "url": "htttps://www.github.com/MJ9601"
+      "imgUrl": "/images/img-1.png",
+      "url": "https://github.com/MJ9601"
     },
     {
       "id": 2,
-      "imgUrl": "https://drive.google.com/file/d/1ct2QkSKK3gCCIYe9O8lfiPmqwdi71Mx-/view?usp=sharing",
-      "url": "htttps://www.github.com/MJ9601"
+      "imgUrl": "/images/img-2.png",
+      "url": "https://github.com/MJ9601"
     },
     {
       "id": 3,
-      "imgUrl": "https://drive.google.com/file/d/1TqCnnFAJuUEdHqK9Rbn9NQo2Zb1erEFq/view?usp=sharing",
-      "url": "htttps://www.github.com/MJ9601"
+      "imgUrl": "/images/img-3.png",
+      "url": "https://github.com/MJ9601"
     },
     {
       "id": 4,
-      "imgUrl": "https://drive.google.com/file/d/141R3-dxcGHUW5Fwp1ex3uYXyBNQzmuQn/view?usp=sharing",
-      "url": "htttps://www.github.com/MJ9601"
+      "imgUrl": "/images/img-4.png",
+      "url": "https://github.com/MJ9601"
     },
     {
       "id": 5,
-      "imgUrl": "https://drive.google.com/file/d/1RXlrF1HKhtSOSiF9trAGGnaOLeUvNsOO/view?usp=sharing",
-      "url": "htttps://www.github.com/MJ9601"
+      "imgUrl": "/images/img-5.png",
+      "url": "https://github.com/MJ9601"
     },
     {
       "id": 6,
-      "imgUrl": "https://drive.google.com/file/d/1PnMJgsV5ulkmGZVSX8vjhZ4dfk5opgzx/view?usp=sharing",
-      "url": "htttps://www.github.com/MJ9601"
+      "imgUrl": "/images/img-6.png",
+      "url": "https://github.com/MJ9601"
     },
     {
       "id": 7,
-      "imgUrl": "%LOCALSRC%/images/img-7.png",
-      "url": "htttps://www.github.com/MJ9601"
+      "imgUrl": "/images/img-7.png",
+      "url": "https://github.com/MJ9601"
     }
   ]
 }
