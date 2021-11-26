@@ -1,29 +1,53 @@
 import "./Contact.css";
 import { FaAt, FaPhoneVolume, FaSearchLocation } from "react-icons/fa";
 import React, { useRef } from "react";
-import emailjs from "emailjs-com";
+import { google } from "googleapis";
+import nodemailer from "nodemailer";
 
-function Contact() {
+function Contact({ OAuth2 }) {
   const formRef = useRef();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_rrinufn",
-        "template_b0wyudg",
-        formRef.current,
-        "user_LJkGnkUmCnXpAnASNtx9"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
+    const CLIENT_ID = OAuth2.client_id;
+    const CLIENT_SECRET = OAuth2.client_secret;
+    const REDIRECT_URL = OAuth2.redirect_url;
+    const REFRESH_TOKEN = OAuth2.refresh_token;
+
+    const oAuth2Client = new google.auth.OAuth2(
+      CLIENT_ID,
+      CLIENT_SECRET,
+      REDIRECT_URL
+    );
+
+    oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
+
+    const sendMail = async () => {
+      const accessToken = await oAuth2Client.getAccessToken();
+      const transport = nodemailer.createTransport({
+        service: "email",
+        auth: {
+          type: "OAuth2",
+          user: "mj.khodadadi.96.test@gmail.com",
+          clientId: CLIENT_ID,
+          clientSecret: CLIENT_SECRET,
+          refreshToken: REFRESH_TOKEN,
+          accessToken: accessToken,
         },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+      });
+
+      const mailDetails = {
+        from: "test <>",
+        to: "mj.khodadadi.1996@gmail.com",
+        subject: "test <>",
+        text: "this is a test",
+        html: "<p> this is a test </p>",
+      };
+      const results = await transport.sendMail(mailDetails);
+      return results;
+    };
+    sendMail().then((resp) => console.log("Email sent ..", resp));
   };
 
   return (
