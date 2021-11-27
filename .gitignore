@@ -4,7 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
-oauth.json
+email_server/node_modules
+/email_server/data.json
 
 # testing
 /coverage

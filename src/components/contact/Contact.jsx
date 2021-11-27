@@ -1,53 +1,42 @@
 import "./Contact.css";
 import { FaAt, FaPhoneVolume, FaSearchLocation } from "react-icons/fa";
-import React, { useRef } from "react";
-import { google } from "googleapis";
-import nodemailer from "nodemailer";
+import React, { useState } from "react";
 
-function Contact({ OAuth2 }) {
-  const formRef = useRef();
+function Contact() {
+  const [UserName, setUserName] = useState("");
+  const [UserEmail, setUserEmail] = useState("");
+  const [Subject, setSubject] = useState("");
+  const [Message, setMessage] = useState("");
+  const [Sent, setSent] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const CLIENT_ID = OAuth2.client_id;
-    const CLIENT_SECRET = OAuth2.client_secret;
-    const REDIRECT_URL = OAuth2.redirect_url;
-    const REFRESH_TOKEN = OAuth2.refresh_token;
+    if ((!UserName, !UserEmail)) {
+      alert("Name and Email is required!");
+      return;
+    }
 
-    const oAuth2Client = new google.auth.OAuth2(
-      CLIENT_ID,
-      CLIENT_SECRET,
-      REDIRECT_URL
-    );
-
-    oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
-
-    const sendMail = async () => {
-      const accessToken = await oAuth2Client.getAccessToken();
-      const transport = nodemailer.createTransport({
-        service: "email",
-        auth: {
-          type: "OAuth2",
-          user: "mj.khodadadi.96.test@gmail.com",
-          clientId: CLIENT_ID,
-          clientSecret: CLIENT_SECRET,
-          refreshToken: REFRESH_TOKEN,
-          accessToken: accessToken,
-        },
-      });
-
-      const mailDetails = {
-        from: "test <>",
-        to: "mj.khodadadi.1996@gmail.com",
-        subject: "test <>",
-        text: "this is a test",
-        html: "<p> this is a test </p>",
-      };
-      const results = await transport.sendMail(mailDetails);
-      return results;
+    const mailBody = {
+      userName: UserName,
+      userEmail: UserEmail,
+      Subject: Subject,
+      Message: Message,
     };
-    sendMail().then((resp) => console.log("Email sent ..", resp));
+
+    await fetch("http://localhost:3002/postEmail", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(mailBody),
+    });
+
+    setMessage("");
+    setSubject("");
+    setUserEmail("");
+    setUserName("");
+    setSent(true);
   };
 
   return (
@@ -91,13 +80,14 @@ function Contact({ OAuth2 }) {
                 Doloribus, a.
               </span>
             </h1>
-            <form ref={formRef} onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
               <div>
                 <input
                   type="text"
                   className="input-tag"
                   id="name"
-                  name="user_name"
+                  value={UserName}
+                  onChange={(e) => setUserName(e.target.value)}
                 />
                 <label htmlFor="name" className="labels">
                   Name
@@ -108,7 +98,8 @@ function Contact({ OAuth2 }) {
                   type="email"
                   className="input-tag"
                   id="email"
-                  name="user_email"
+                  value={UserEmail}
+                  onChange={(e) => setUserEmail(e.target.value)}
                 />
                 <label htmlFor="eamil" className="labels">
                   Email
@@ -119,7 +110,8 @@ function Contact({ OAuth2 }) {
                   type="text"
                   className="input-tag"
                   id="subject"
-                  name="user_subject"
+                  value={Subject}
+                  onChange={(e) => setSubject(e.target.value)}
                 />
                 <label htmlFor="subject" className="labels">
                   Subject
@@ -132,13 +124,15 @@ function Contact({ OAuth2 }) {
                   cols="30"
                   rows="10"
                   className="input-tag"
-                  name="message"
+                  value={Message}
+                  onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
                 <label htmlFor="message" className="labels">
                   Message
                 </label>
               </div>
               <input type="submit" className="btn" value="Send" />
+              {Sent && "Message sent .."}
             </form>
           </div>
         </div>

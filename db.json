@@ -35,5 +35,14 @@
       "imgUrl": "/images/img-7.png",
       "url": "https://github.com/MJ9601"
     }
+  ],
+  "oauth": [
+    {
+      "id": 1,
+      "client_id": "326930321637-m2re830b72oftl1b6tsoi61pf2no1tsp.apps.googleusercontent.com",
+      "client_secret": "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",
+      "redirect_url": "https://developers.google.com/oauthplayground",
+      "refresh_token": "1//04FQiuLdnZhofCgYIARAAGAQSNwF-L9Ir2TuYNA9-QTB0qWmAk2p0JSvmy1Wa2Z2ar4sEAIXzatbzUzkOm4c98T8GnpHoaFymuVE"
+    }
   ]
 }

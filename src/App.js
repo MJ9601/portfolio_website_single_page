@@ -7,27 +7,18 @@ import Footer from "./components/footer/Footer";
 
 function App() {
   const [Data, setData] = useState([]);
-  const [OAuth, setOAuth] = useState([]);
+
 
   useEffect(() => {
     const getdata = async () => {
       const data = await fetchData();
-      const oAuth = await fetchOauth();
-      setOAuth(oAuth);
       setData(data);
     };
     getdata();
   }, []);
 
-  // fetch functions
-  const fetchOauth = async () => {
-    const res = await fetch("http://localhost:5050/oauth");
-    const data = await res.json();
-    return data;
-  };
-
   const fetchData = async () => {
-    const res = await fetch("http://localhost:5000/items");
+    const res = await fetch("http://localhost:3001/items");
     const data = await res.json();
     return data;
   };
@@ -37,7 +28,7 @@ function App() {
       <Hero />
       <About />
       <Gallery data={Data} />
-      <Contact OAuth2={OAuth[0]} />
+      <Contact />
       <Footer />
     </div>
   );
