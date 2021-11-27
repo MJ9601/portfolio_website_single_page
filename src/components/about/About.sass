@@ -67,5 +67,25 @@
               font-size: 1.5rem
               color: #666
 
+@media screen and ( max-width: 989px )
+  .about-section
+    .container
+      flex-direction: column-reverse
+      .left-side, .right-side
+        width: 80%
+        margin: 0 auto
+        margin-bottom: 5rem
+        padding-bottom: 5rem
+      .left-side
+          margin: 0 auto
+          width: 80%
+        .img-wrapper
+          text-align: center
+          &::before
+            display: none
+          img
+            width: 40rem
+
+
 
           

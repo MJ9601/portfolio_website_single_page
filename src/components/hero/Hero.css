@@ -70,5 +70,48 @@
     transform: translateY(-15rem); }
   100% {
     transform: translateY(-15rem); } }
+@media (max-width: 1425px) {
+  .container {
+    width: 90%; }
+
+  .hero .container {
+    width: 98%; } }
+@media screen and (max-width: 1184px) {
+  html {
+    overflow-x: hidden; }
+
+  body {
+    overflow-x: hidden !important; }
+
+  section {
+    overflow-x: hidden !important; }
+
+  .hero .back-svg img {
+    top: 40%; }
+  .hero .container .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; }
+    .hero .container .content-wrapper .left-side, .hero .container .content-wrapper .right-side {
+      text-align: center; }
+    .hero .container .content-wrapper .left-side {
+      width: 70%;
+      margin: 0 auto; }
+      .hero .container .content-wrapper .left-side .content-holder {
+        text-align: center;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center; }
+        .hero .container .content-wrapper .left-side .content-holder .content-header {
+          margin-bottom: 0.1rem; }
+      .hero .container .content-wrapper .left-side .content-text {
+        text-align: center;
+        margin: 0 auto; }
+    .hero .container .content-wrapper .right-side img {
+      width: 80%; } }
+@media screen and (max-width: 460px) {
+  html {
+    font-size: 45%; } }
 
 /*# sourceMappingURL=Hero.css.map */

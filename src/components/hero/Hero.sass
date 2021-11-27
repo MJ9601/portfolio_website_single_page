@@ -79,3 +79,54 @@
     transform: translateY(-15rem)
   100%
     transform: translateY(-15rem)
+
+
+@media ( max-width: 1425px )
+  .container
+    width: 90%
+  .hero
+    .container
+      width: 98%
+@media screen and ( max-width: 1184px )
+  html
+    overflow-x: hidden
+  body
+    overflow-x: hidden !important
+  section
+    overflow-x: hidden !important
+  .hero
+    .back-svg
+      img
+        top: 40%
+    .container
+      .content-wrapper
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-items: center
+        .left-side, .right-side
+          text-align: center
+        .left-side
+          width: 70%
+          margin: 0 auto
+          .content-holder
+            text-align: center
+            margin: 0 auto
+            justify-content: center
+            align-items: center
+            .content-header
+              margin-bottom: .1rem
+          .content-text
+            text-align: center
+            margin: 0 auto
+        .right-side
+          img
+            width: 80%
+@media screen and ( max-width: 460px )
+  html
+    font-size: 45%  
+
+
+
+
+  

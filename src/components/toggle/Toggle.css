@@ -1,0 +1,21 @@
+.toggle {
+  position: fixed;
+  top: 3rem;
+  right: 3rem;
+  width: 3rem;
+  height: 3rem;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.sun,
+.moon {
+  color: rgba(202, 199, 0, 0.986);
+  font-size: 2.5rem;
+}
+.moon {
+  color: rgb(55, 55, 73);
+}

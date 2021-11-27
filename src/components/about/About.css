@@ -65,4 +65,19 @@
             font-size: 1.5rem;
             color: #666; }
 
+@media screen and (max-width: 989px) {
+  .about-section .container {
+    flex-direction: column-reverse; }
+    .about-section .container .left-side, .about-section .container .right-side {
+      width: 80%;
+      margin: 0 auto;
+      margin-bottom: 5rem;
+      padding-bottom: 5rem; }
+    .about-section .container .left-side .img-wrapper {
+      text-align: center; }
+      .about-section .container .left-side .img-wrapper::before {
+        display: none; }
+      .about-section .container .left-side .img-wrapper img {
+        width: 40rem; } }
+
 /*# sourceMappingURL=About.css.map */

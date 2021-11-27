@@ -109,4 +109,8 @@
           margin-bottom: 2rem;
           z-index: 2; }
 
+@media screen and (max-width: 652px) {
+  .contact .container {
+    flex-direction: column; } }
+
 /*# sourceMappingURL=Contact.css.map */

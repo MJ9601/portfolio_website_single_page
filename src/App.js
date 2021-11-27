@@ -2,12 +2,13 @@ import Hero from "./components/hero/Hero";
 import About from "./components/about/About";
 import Gallery from "./components/gallery/Gallery";
 import Contact from "./components/contact/Contact";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Footer from "./components/footer/Footer";
+import Toggle from "./components/toggle/Toggle";
+import { ThemeContext } from "./Context";
 
 function App() {
   const [Data, setData] = useState([]);
-
 
   useEffect(() => {
     const getdata = async () => {
@@ -22,9 +23,17 @@ function App() {
     const data = await res.json();
     return data;
   };
-
+  const context = useContext(ThemeContext);
+  const darkMode = context.state.darkMode;
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{
+        backgroundColor: darkMode && "#222",
+        color: darkMode && "#999",
+      }}
+    >
+      <Toggle />
       <Hero />
       <About />
       <Gallery data={Data} />
